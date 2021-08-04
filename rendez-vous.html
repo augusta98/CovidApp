@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="/js/style.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/bower_components/pickadate/lib/themes/classic.css">
+<link rel="stylesheet" href="/bower_components/pickadate/lib/themes/classic.date.css">
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
+    <div class="textIntro">
+      <h1 class="text-center">Formulaire De Validation Des Rendez-vous</h1>
+      <p ng-show="msg" class="text-center">{{msg}}</p>
+</div>
+   <form name="myForm" ng-controller="FormCtrl">
+     <div class="form-group">
+        <input type="text" class="form-control" name="firstname" placeholder="Entrez Votre Nom" ng-model="user.firstname" ng-required="true">
+        <p class="error" ng-show="myForm.firstname.$invalid && myForm.firstname.$touched">Entrez Votre Nom</p>
+     </div>
+ 
+     <div class="form-group">
+       <input type="text" class="form-control" name="lastname" placeholder="Entrez Votre Prenom"  ng-model="user.lastname" ng-required="true">
+       <p class="error"  ng-show="myForm.lastname.$invalid && myForm.lastname.$touched ">Entrez Votre Prenom</p>
+     </div>
+
+     <div class="form-group">
+       <input type="email" class="form-control"  name="mail" placeholder="Entrez Votre Adresse-email"  ng-model="user.email" ng-required="true">
+       <p class="error"  ng-show="myForm.email.$invalid && myForm.email.$touched">Entrez Votre Adresse-mail</p>
+       
+     </div>
+
+     <div class="form-group">
+       <input type="number" class="form-control" name="phone" placeholder="Votre numero De telephone"  ng-model="user.phone" ng-required="true">
+       <p class="error"  ng-show="myForm.phone.$invalid && myForm.phone.$touched"> Votre numero</p>
+     </div>
+
+      <div class="form-group">
+       <input type="text" class="form-control" name="Entrez Votre adresse" placeholder="Entrez Votre Adresse "  ng-model="user.adresse" ng-required="true">
+       <p class="error"  ng-show="myForm.adresse.$invalid && myForm.adresse.$touched"> Entrez Votre adresse</p>
+     </div>
+
+     <div class="row">
+      <div for="" class="text-align " style = "text-transform: lowercase" >Etes vous deja Vacciné ? si oui a quand remonte la date de votre premiere dose?</div>
+      <div class="col">
+        <label for="exampleInputEmail">Date du 1er vaccin</label><br>
+        <input class="form-control" type="hidden" ng-required="true" ng-model="user.dateDebut"   class="form-control" id="datepicker" placeholder="date du premier vaccin"/>
+       </div>
+     <div class="col ">
+        <label for="exampleInputEmail">Date du deuxieme vaccin</label>
+        <input class="form-control" type="hidden" class="form-control"  ng-model="user.dateFin" ng-required="true" id="date" placeholder="date du second vaccin"/>
+      </div> 
+   </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="centre">Votre Region : </label>
+          <select id="centre">
+            <option value="Moka">Moka</option>
+            <option value="Rose">Rose-Hill</option>
+            <option value="PortLouis">Port-Louis</option>
+            <option value="Quatre">Quatre-bornes</option>
+         </select>
+        </div> 
+        <div class="col-md-6">
+           <label for="centre">Centre Covid:</label>
+           <select id="centre">
+             <option value="Moka">Moka</option>
+             <option value="Rose">Rose-Hill</option>
+             <option value="PortLouis">Port-Louis</option>
+             <option value="Quatre">Quatre-bornes</option>
+            </select>
+          </div> 
+       </div>
+     <button type="submit" class="btn btn btn-primary mb-6" ng-click="send()"> submit</button>
+  </form>
+   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/pickadate/lib/picker.js"></script>
+  <script src="/bower_components/pickadate/lib/picker.date.js"></script>
+</div>
+<div class="col-md-4"></div>
+</div>
+
+
+</br></br>
+<div class="row">
+ <div class="col-md-6">
+  <a href="#/Home" class="card-link ">revenir a la page d'accueil</a>
+ </div>
+<script>
+  (function($){
+      $('#datepicker').pickadate(),
+      $('#date').pickadate()
+  })(jQuery);
+  </script>

@@ -1,0 +1,38 @@
+<div class="table-responsive col-md-1"></div>
+  <div ng-controller="MokaCtrl" class="table-responsive col-md-10">
+    <h2 class="text-center">Centres De Vaccination Region Moka </h2><br></br>
+     <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <table class="table">
+              <tr>
+                <th scope="col">Nom Du Centre</th>
+                <th scope="col">Adress du Centre</th>
+                <th scope="col">Horaire de jours</th>
+              </tr>
+            <tbody>
+                <tr>
+                  <td  ng-repeat="centreName in CentreNames" >{{centreName.name1}}</td>
+                  <td ng-repeat="adress in AdressCentres">{{adress.adressCentre1}}</td>
+                  <td ng-repeat="heure in HeureCentres">{{heure.heureCentre1}}</td>
+                </tr>
+                <!-- <tr>
+                    <td  ng-repeat="centreName in CentreNames" >{{centreName.name2}}</td>
+                    <td ng-repeat="adress in AdressCentres">{{adress.adressCentre2}}</td>
+                    <td ng-repeat="heure in HeureCentres">{{heure.heureCentre2}}</td>
+                  </tr> -->
+              </tbody>
+        </table></br></br>
+
+      <!-- <ul>
+        <li ng-repeat="centreName in CentreNames">{{centreName.name}}</li>
+      </ul> -->
+    </div></br></br>
+    <div class="col-md-3"></div>
+    <div class="row">
+		<div class="col-md-8"></div>
+		<div class="col-md-4">
+            <a href="#/centreCovid" class="card-link ">Revenir a la page Precedente</a>
+		</div>
+	</div>
+ </div>
+ </div>

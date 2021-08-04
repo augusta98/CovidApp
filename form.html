@@ -1,0 +1,61 @@
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Vaccination Form</title>
+    <link rel="stylesheet" href="/js/style.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/pickadate/lib/themes/classic.css">
+    <link rel="stylesheet" href="/bower_components/pickadate/lib/themes/default.date.css">
+   
+    <div class="container" id="covidapp" ng-controller="FormCtrl">
+        <div class="textIntro">
+            <h1>Form validation</h1>
+            <p ng-show="msg">{{msg}}</p>
+        </div>
+
+        <form name="myForm">
+            <div class="form-group">
+                <input type="text" class="form-control" name="firstname" placeholder="Firstname" ng-model="user.firstname" ng-required="true">
+                <p class="error" ng-show="myForm.firstname.$invalid && myForm.firstname.$touched">enter your firstname</p>
+            </div>
+           
+            <div class="form-group">
+                <input type="text" class="form-control" name="lastname" placeholder="lastname"  ng-model="user.lastname" ng-required="true">
+                <p class="error"  ng-show="myForm.lastname.$invalid && myForm.lastname.$touched ">enter your lastname</p>
+            </div>
+        
+            <div class="form-group">
+                <input type="email" class="form-control"  name="email" placeholder="email"  ng-model="user.email" ng-required="true">
+                <p class="error"  ng-show="myForm.email.$invalid && myForm.email.$touched">enter your email account</p>
+                
+            </div>
+
+            <div class="form-group">
+             
+                <input type="number" class="form-control" name="phone" placeholder="Phone number"  ng-model="user.phone" ng-required="true">
+                <p class="error"  ng-show="myForm.phone.$invalid && myForm.phone.$touched"> chiffres</p>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="exampleInputEmail">Date du premier vaccin</label><br>
+                    <input class="form-control" type="hidden" ng-required="true" ng-model="user.dateDebut"   class="form-control" id="datepicker" placeholder="date du premier vaccin"/>
+                </div>
+
+                <div class="col ">
+                    <label for="exampleInputEmail">Date du deuxieme vaccin</label>
+                    <input class="form-control" type="hidden" class="form-control"  ng-model="user.dateFin" ng-required="true" id="date" placeholder="date du second vaccin"/>
+                </div>
+            
+        </form>
+
+    </div>
+    <button type="submit" class="btn btn btn-primary mb-6" ng-click="send()"> submit</button>
+
+      <script>
+            (function($){
+                $('#datepicker').pickadate(),
+                $('#date').pickadate()
+            })(jQuery);
+     </script>
+

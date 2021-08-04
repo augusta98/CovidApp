@@ -1,0 +1,294 @@
+<div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+  <div class="col-xs-12">
+    <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col-lg-3 col-md-6 col-xs-12">
+		<rd-widget>
+			<rd-widget-body>
+				<div class="widget-icon green pull-left">
+					<i class="fa fa-users"></i>
+				</div>
+				<div class="title">80</div>
+				<div class="comment">Users</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+	<div class="col-lg-3 col-md-6 col-xs-12">
+		<rd-widget>
+			<rd-widget-body>
+				<div class="widget-icon red pull-left">
+					<i class="fa fa-tasks"></i>
+				</div>
+				<div class="title">16</div>
+				<div class="comment">Servers</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+	<div class="col-lg-3 col-md-6 col-xs-12">
+		<rd-widget>
+			<rd-widget-body>
+				<div class="widget-icon orange pull-left">
+					<i class="fa fa-sitemap"></i>
+				</div>
+				<div class="title">225</div>
+				<div class="comment">Documents</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+	<div class="col-lg-3 col-md-6 col-xs-12">
+		<rd-widget>
+			<rd-widget-body>
+				<div class="widget-icon blue pull-left">
+					<i class="fa fa-support"></i>
+				</div>
+				<div class="title">62</div>
+				<div class="comment">Tickets</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<rd-widget>
+      		<rd-widget-header icon="fa-tasks" title="Servers">
+				<a href="#">Manage</a>
+      		</rd-widget-header>
+      		<rd-widget-body classes="medium no-padding">
+				<div class="table-responsive">
+					<table class="table">
+						<tbody>
+							<tr><td>RDVMPC001</td><td>238.103.133.37</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+							<tr><td>RDVMPC002</td><td>68.66.63.170</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+							<tr><td>RDVMPC003</td><td>76.117.212.33</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
+							<tr><td>RDPHPC001</td><td>91.88.224.5</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+							<tr><td>RDESX001</td><td>197.188.15.93</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+							<tr><td>RDESX002</td><td>168.85.154.251</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+							<tr><td>RDESX003</td><td>209.25.191.61</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
+							<tr><td>RDESX004</td><td>252.37.192.235</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+							<tr><td>RDTerminal01</td><td>139.71.18.207</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+							<tr><td>RDTerminal02</td><td>136.80.122.212</td><td><span tooltip="Could not connect!" class="text-warning"><i class="fa fa-flash"></i></span></td></tr>
+							<tr><td>RDDomainCont01</td><td>196.80.245.33</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+						</tbody>
+					</table>
+				</div>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+	<div class="col-lg-6">
+		<rd-widget>
+			<rd-widget-header icon="fa-users" title="Users">
+				<input type="text" placeholder="Search" class="form-control input-sm" />
+			</rd-widget-header>
+			<rd-widget-body classes="medium no-padding">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr><th class="text-center">ID</th><th>Username</th><th>Role</th><th>Account</th></tr>
+						</thead>
+						<tbody>
+							<tr><td class="text-center">1</td><td>Joe Bloggs</td><td>Super Admin</td><td>AZ23045</td></tr>
+							<tr><td class="text-center">2</td><td>Timothy Hernandez</td><td>Admin</td><td>AU24783</td></tr>
+							<tr><td class="text-center">3</td><td>Joe Bickham</td><td>User</td><td>AM23781</td></tr>
+						</tbody>
+					</table>
+        		</div>
+			</rd-widget-body>
+		<rd-widget>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+   		<rd-widget>
+   			<rd-widget-header icon="fa-plus" title="Extras">
+   				<button class="btn btn-sm btn-info">Button</button>
+   			</rd-widget-header>
+   			<rd-widget-body>
+				<div class="message">
+					This is a standard message which will also work the ".no-padding" class, I can also <span class="error">be an error message!</span>
+				</div>
+				<hr />
+				<div class="message">
+					<a href="http://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap</a> is included, so you can use <a href="#" tooltip="I'm a tooltip!">tooltips</a> and all of the other native Bootstrap JS components!
+				</div>
+   			</rd-widget-body>
+   		</rd-widget>
+	</div>
+	<div class="col-lg-6">
+		<rd-widget>
+			<rd-widget-header icon="fa-cog fa-spin" title="Loading Directive">
+				<a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit</a>
+			</rd-widget-header>
+			<rd-widget-body>
+				<rd-loading></rd-loading>
+			</rd-widget-body>
+		</rd-widget>
+	</div>
+</div>
+
+
+<div class="container">
+    <div class="row clearfix">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="boxs project_widget">
+                     <div class="pw_img">
+                        <img class="img-responsive" src="https://via.placeholder.com/280x280/FFB6C1/000000" alt="About the image">
+                    </div>
+                    <div class="pw_content">
+                        <div class="pw_header">
+                            <h6>Magazine Design</h6>
+                            <small class="text-muted">Falcon  |  Last Update: 12 Dec 2017</small>
+                        </div>
+                        <div class="pw_meta">
+                            <span>4,870 USD</span>
+                            <small class="text-muted">Budget / Salary</small>
+                            <small class="text-danger">17 Days Remaining</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="boxs project_widget">
+                    <div class="pw_img">
+                        <img class="img-responsive" src="https://via.placeholder.com/280x280/87CEFA/000000" alt="About the image">
+                    </div>                            
+                    <div class="pw_content">
+                        <div class="pw_header">
+                            <h6>New Dashboard</h6>
+                            <small class="text-muted">Falcon  |  Last Update: 17 Dec 2017</small>
+                        </div>
+                        <div class="pw_meta">
+                            <span>921 USD</span>
+                            <small class="text-muted">Budget / Salary</small>
+                            <small class="text-success">Early Dec 2017</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="boxs project_widget">
+                     <div class="pw_img">
+                        <img class="img-responsive" src="https://via.placeholder.com/280x280/FF7F50/000000" alt="About the image">
+                    </div>
+                    <div class="pw_content">
+                        <div class="pw_header">
+                            <h6>Mobile App</h6>
+                            <small class="text-muted">Falcon  |  Last Update: 21 Dec 2017</small>
+                        </div>
+                        <div class="pw_meta">
+                            <span>1,870 USD</span>
+                            <small class="text-muted">Budget / Salary</small>
+                            <small class="text-danger">10 Days Remaining</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="boxs project_widget">
+                     <div class="pw_img">
+                        <img class="img-responsive" src="https://via.placeholder.com/280x280/20B2AA/000000" alt="About the image">
+                    </div>
+                    <div class="pw_content">
+                        <div class="pw_header">
+                            <h6>New Dashboard</h6>
+                            <small class="text-muted">Falcon  |  Last Update: 28 Dec 2017</small>
+                        </div>
+                        <div class="pw_meta">
+                            <span>870 USD</span>
+                            <small class="text-muted">Budget / Salary</small>
+                            <small class="text-warning">6 Days Remaining</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<style>
+    body{
+    background-color: #f0f3f5;
+    margin-top:20px;}
+.boxs {
+    position: relative;
+    margin-bottom: 30px;
+    color: #4d585f;
+    background-color: white;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transition: opacity 0.25s ease-out;
+    -moz-transition: opacity 0.25s ease-out;
+    transition: opacity 0.25s ease-out;
+    border-radius: 3px;
+}
+.project_widget .pw_img {
+    position: relative;
+    overflow: hidden
+}
+
+.project_widget .pw_img:before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg)
+}
+
+.project_widget .pw_img:hover::before {
+    -webkit-animation: shine .75s;
+    animation: shine .75s
+}
+
+@-webkit-keyframes shine {
+    100% {
+        left: 125%
+    }
+}
+
+@keyframes shine {
+    100% {
+        left: 125%
+    }
+}
+
+.project_widget .pw_img img {
+    border-radius: 3px 3px 0 0
+}
+
+.project_widget .pw_content .pw_header {
+    padding: 20px;
+    border-bottom: 1px solid #e6eaee
+}
+
+.project_widget .pw_content .pw_header h6 {
+    font-size: 16px;
+    margin: 0
+}
+
+.project_widget .pw_content .pw_header small {
+    font-size: 12px
+}
+
+.project_widget .pw_content .pw_meta {
+    padding: 20px
+}
+
+.project_widget .pw_content .pw_meta small,
+.project_widget .pw_content .pw_meta span {
+    display: block
+}
+
+.project_widget .pw_content .pw_meta span {
+    font-weight: 500
+}
+</style>

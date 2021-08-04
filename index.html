@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" ng-app="MyApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>CovidApp AngularJS</title>
+  <!-- STYLES -->
+  <!-- build:css lib/css/main.min.css -->
+  <script
+  src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script> 
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/rdash-ui/dist/css/rdash.min.css">
+  
+  <link rel="stylesheet" href="/bower_components/pickadate/lib/themes/classic.css">
+  <link rel="stylesheet" href="bower_components/pickadate/lib/themes/classic.css">
+  <link rel="stylesheet" href="/bower_components/pickadate/lib/themes/classic.date.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/js/maps.css">
+  <link rel="stylesheet" href="/js/style.css">
+  
+    
+
+    
+  <!-- endbuild -->
+  <!-- SCRIPTS -->
+  <!-- build:js lib/js/main.min.js -->
+  <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  
+  <!-- endbuild -->
+  <!-- Custom Scripts -->
+  <!-- <script type="text/javascript" src="js/dashboard.min.js"></script> -->
+  <script src="/js/app.js"></script>
+  <script src="/js/service/post.js"> </script>
+  <script src="/js/controller/comment.js"> </script>
+  <script src="/js/controller/post.js"> </script>
+  <script src="/js/controller/rendez-vousCtrl.js"></script>
+  <script src="/js/controller/formCtrl.js"></script>
+  <script src="/js/controller/centreCtrl.js"></script>
+  <script  src="/js/controller/googleMapCtrl.js"></script>
+  <script src="/js/directive/comment.js"></script>
+
+ 
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/pickadate/lib/picker.js"></script>
+  <script src="/bower_components/pickadate/lib/picker.date.js"></script>
+  
+
+
+</head>
+<body>
+  <div id="page-wrapper" ng-class="{'open': true}" ng-cloak>
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar">
+        <li class="sidebar-main">
+          <a ng-click="toggleSidebar()">
+            Dashboard
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span> Dashboard</span></li>
+        <li class="sidebar-list">
+          <a href="#/">Home <span class="menu-icon fa fa-tachometer"></span></a>
+        </li>
+        <!-- <li class="sidebar-list">
+          <a href="#/template">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+        </li> -->
+        <li class="sidebar-list">
+          <a href="#/tables">Tables <span class="menu-icon fa fa-table"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/rendez-vous">Rendez-vous <span class="menu-icon fa fa-table"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/centreCovid">Centre de Vaccination<span class="menu-icon fa font-family"></span></a>
+        </li>
+        <!-- <li class="sidebar-list">
+          <a href="#/form">Formulaire inscription <span class="menu-icon fa fa-table"></span></a>
+        </li> -->
+
+      <!-- <li class="sidebar-list">
+        <a href="#/Essaie">Home Essaie<span class="menu-icon fa fa-table"></span></a>
+      </li>
+    </ul> -->
+      
+        
+    </div>
+    <!-- End Sidebar -->
+
+    <div id="content-wrapper">
+      <div class="page-content">
+
+        <!-- Header Bar -->
+        <div class="row header">
+          <div class="col-xs-12">
+            <div class="user pull-right">
+              <div class="item dropdown" uib-dropdown>
+                <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+                  <img src="/js/template/img/avatar.jpg">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="dropdown-header">
+                    Joe Bloggs
+                  </li>
+                  <li class="divider"></li>
+                  <li class="link">
+                    <a href="#">
+                      Profile
+                    </a>
+                  </li>
+                  <li class="link">
+                    <a href="#">
+                      Menu Item
+                    </a>
+                  </li>
+                  <li class="link">
+                    <a href="#">
+                      Menu Item
+                    </a>
+                  </li>
+                  <li class="divider"></li>
+                  <li class="link">
+                    <a href="#">
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="item dropdown" uib-dropdown>
+               <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+                  <i class="fa fa-bell-o"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="dropdown-header">
+                    Notifications
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="#">Server Down!</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="meta">
+              <div class="page">
+                Dashboard
+              </div>
+              <div class="breadcrumb-links">
+                <!-- Home / Dashboard -->
+                <div class="topnav">
+                  <a class="active" href="#home">Bienvenu
+                    {{user.name}}</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                </div>
+              </div>
+              <style>
+              body {
+                margin: 28px;
+                font-family: Arial, Helvetica, sans-serif;
+                
+              }
+              .topnav {
+                overflow: hidden;
+                background-color: rgb(21, 122, 161);
+              }
+              
+              .topnav a {
+                float: right;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 19px;
+              }
+              
+              .topnav a:hover {
+                background-color: #ddd;
+                color: rgb(29, 133, 218);
+              }
+              
+              .topnav a.active {
+                background-color: #3b0c0c1e;
+                color: white;
+              }
+              </style>
+            </div>
+          </div>
+        </div>
+        <!-- End Header Bar -->
+
+        <!-- Main Content -->
+        <div ng-view></div>
+
+      </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+  </div><!-- End Page Wrapper -->
+</body>
+</html>

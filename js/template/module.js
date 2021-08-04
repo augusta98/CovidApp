@@ -1,0 +1,1 @@
+angular.module('MonApp', ['ui.bootstrap', 'ui.router', 'ngCookies']);

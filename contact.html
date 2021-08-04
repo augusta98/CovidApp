@@ -1,0 +1,98 @@
+<style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+  * {box-sizing: border-box;}
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color:rgb(21, 122, 161);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  } */
+  </style>
+
+<div class="row">
+  <div class="col-md-1"></div> 
+  <div class="col-md-5">
+    <h2 class="text-center">Contactez-Nous</h2><br></br>
+    <form action="/action_page.php">
+      <label for="fname">Nom</label>
+      <input type="text" id="fname" ng-model="user.name" ng-required="true" name="firstname" placeholder="Votre nom...">
+  
+      <label for="lname">Prenom</label>
+      <input type="text" id="lname" name="lastname" ng-model="user.lastname" ng-required="true" placeholder="Votre Prenom...">
+  
+      <label for="country">Pays</label>
+      <select id="country" ng-model="user.country" ng-required="true" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+        <option value="usa">Maurice</option>
+        <option value="usa">RDCongo </option>
+        <option value="usa">Congo</option>
+      </select>
+  
+      <label for="subject">Sujet</label>
+      <textarea id="subject" name="subject" placeholder="Ecrivez quelques choses..." style="height:200px"></textarea>
+  
+      <input type="submit" value="Submit">
+    </form>
+   </div></br></br>
+
+   <div class="col-md-6">
+    <!-- <div class="container"> -->
+      <img src="js/template/img/girl-vector.jpg" alt="Pineapple" width="500" height="500">
+      <div class="centered">
+        <a>
+          <strong> Contactez-nous dans le cas d'urgence  au 5744444114</strong> 
+        </a> </br></br>
+        <a>
+          <strong> <a href="#/rendez-vous">Vaccinez-vous en prenant rendez-vous</a> </strong> 
+        </a> 
+      </div>
+     </div>
+</div>
+
+<style>
+ 
+ img {
+  -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+  filter: blur(2px);
+}
+  </style>
+
+
+
+</br></br>
+<div class="row">
+ <div class="col-md-6">
+  <a href="#/Home" class="card-link ">revenir a la page d'accueil</a>
+ </div>
+ <!-- <div class="col-md-2"></div>
+     <div class="col-md-4">
+     <a href="#/rendez-vous">Vaccinez-vous en prenant rendez-vous</a>
+  </div> -->
+</div>
+		

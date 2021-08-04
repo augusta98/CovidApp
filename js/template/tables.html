@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="panel-heading h3 text-center">Liste Des Employees vacciné </div>
+<!-- <div class="row">
+	
+  </div> -->
+  <div class="row">
+	<div class="table-responsive col-md-1"></div>
+    <div ng-init = "getListEmployee()">
+		<div class="table-responsive col-md-10">
+		    <table class="table table-striped">
+		      <thead  class="thead-dark">
+		         <tr>
+				  <th>Identifiant</th>
+				   <th>Name</th>
+				   <th>Departement</th>
+				   <th>Gender</th>
+				   <th>1ere Dose</th>
+				   <th>2eme Dose</th>
+				   <th class="text-center"> Action</th>
+		         </tr>
+		      </thead>
+		      <tr ng-repeat="employee in employees">
+			     <td>{{employee.id}}</td>
+		         <td>{{employee.name}}</td>
+		          <td>{{employee.departement}}</td>
+			      <td>{{employee.gender}}</td>
+                  <td>{{employee.date}}</td>
+                 <td>{{employee.date2}}</td>
+
+		         <td>
+		      	   <button type="button" class="btn btn-default"
+		      	     ng-click="deleteEmployee(employee)">
+		      	    <span class="glyphicon glyphicon-remove-circle btn btn-outline-danger" aria-hiddeen="true"></span>
+		      	     </button> 
+		         </td>
+
+				 <td>
+				   <button type="button" class="btn btn-default"
+		      	     ng-click="updateEmployeeInit(employee)">
+		      	     <span class=" btn btn-outline-warning glyphicon glyphicon-plus-circle " aria-hiddeen="true"></span>
+		      	    </button>
+				 </td>
+		       </tr>
+		   </table>
+	     </div>
+       </div></br></br>
+	   <div class="row">
+		<div class="col-md-9"></div>
+
+		<div class="col-md-3">
+			<a href="#/Home" class="card-link ">revenir a la page d'accueil</a>
+		</div>
+	   </div>
+    
+   </div>
+  </div>
+</div>
+
+
+	
